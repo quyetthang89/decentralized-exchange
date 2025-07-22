@@ -1,0 +1,142 @@
+/* Arrange left and right sections */
+.account-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+/* Balance section (left) */
+.balance-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Form section (right) */
+.form-section {
+  flex: 1;
+  max-width: 400px;
+}
+
+/* General container styling */
+.account-container {
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Section title */
+.account-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Balance display */
+.balance-box {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.balance-item {
+  font-size: 18px;
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+.token-name {
+  color: #555;
+}
+
+.token-balance {
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Transaction Form */
+.transaction-form {
+  margin-top: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+}
+
+.form-select,
+.form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  background: #ffffff;
+  transition: border 0.3s ease;
+}
+
+.form-input:focus,
+.form-select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button group */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.deposit-button,
+.withdraw-button {
+  flex: 1;
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.deposit-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.withdraw-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.deposit-button:hover {
+  background-color: #218838;
+}
+
+.withdraw-button:hover {
+  background-color: #c82333;
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 768px) {
+  .account-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
