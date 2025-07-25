@@ -50,55 +50,69 @@ function CreateSwap() {
 
   return (
     <div className="swap-form-container">
-      <h2 className="swap-title">Swap Tokens</h2>
+      <h2 className="swap-title">Create Token Swap</h2>
       <form className="swap-form" onSubmit={handleSubmit}>
-        <label className="form-label">From Token:</label>
-        <select
-          value={fromToken}
-          onChange={(e) => setFromToken(e.target.value as TokenSymbol)}
-          className="form-select"
-        >
-          <option value={TokenSymbol.A}>{TokenSymbol.A}</option>
-          <option value={TokenSymbol.B}>{TokenSymbol.B}</option>
-        </select>
+        <div className="form-group">
+          <label className="form-label">From Token</label>
+          <select
+            value={fromToken}
+            onChange={(e) => setFromToken(e.target.value as TokenSymbol)}
+            className="form-select"
+          >
+            <option value={TokenSymbol.A}>Token A</option>
+            <option value={TokenSymbol.B}>Token B</option>
+          </select>
+        </div>
 
-        <button
-          type="button"
-          className="swap-toggle"
-          onClick={handleSwapTokens}
-        >
-          ⇄
-        </button>
+        <div className="swap-toggle-container">
+          <button
+            type="button"
+            className="swap-toggle"
+            onClick={handleSwapTokens}
+            title="Swap tokens"
+          >
+            ⇄
+          </button>
+        </div>
 
-        <label className="form-label">To Token:</label>
-        <select
-          value={toToken}
-          onChange={(e) => setToToken(e.target.value as TokenSymbol)}
-          className="form-select"
-        >
-          <option value={TokenSymbol.A}>{TokenSymbol.A}</option>
-          <option value={TokenSymbol.B}>{TokenSymbol.B}</option>
-        </select>
+        <div className="form-group">
+          <label className="form-label">To Token</label>
+          <select
+            value={toToken}
+            onChange={(e) => setToToken(e.target.value as TokenSymbol)}
+            className="form-select"
+          >
+            <option value={TokenSymbol.A}>Token A</option>
+            <option value={TokenSymbol.B}>Token B</option>
+          </select>
+        </div>
 
-        <label className="form-label">Amount:</label>
-        <input
-          type="number"
-          step="1"
-          min={1}
-          value={amount}
-          onChange={(e) => setAmount(Number(e.target.value))}
-          className="form-input"
-        />
+        <div className="form-group">
+          <label className="form-label">Amount</label>
+          <input
+            type="number"
+            step="1"
+            min={1}
+            value={amount}
+            onChange={(e) => setAmount(Number(e.target.value))}
+            className="form-input"
+            placeholder="Enter amount to swap"
+          />
+        </div>
 
-        <button
-          type="submit"
-          className="swap-button"
-          disabled={saving}
-          style={{ opacity: saving ? 0.5 : 1 }}
-        >
-          Create swap request
-        </button>
-        {lastError != null && <p className="error-message">{lastError}</p>}
+        <div className="form-actions">
+          <button
+            type="submit"
+            className="swap-button"
+            disabled={saving}
+          >
+            {saving ? 'Creating...' : 'Create Swap Request'}
+          </button>
+        </div>
+        
+        {lastError != null && (
+          <p className="error-message">{lastError}</p>
+        )}
       </form>
     </div>
   );

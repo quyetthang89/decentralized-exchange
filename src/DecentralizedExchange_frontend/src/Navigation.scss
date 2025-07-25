@@ -1,46 +1,91 @@
+.navigation {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-4);
+  margin-bottom: var(--space-6);
+  border: 1px solid var(--neutral-200);
+}
+
+.principal {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--neutral-600);
+  margin-bottom: var(--space-4);
+  padding: var(--space-3);
+  background: var(--neutral-50);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--neutral-200);
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  word-break: break-all;
+}
+
 .menu {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #007bff;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  gap: 15px;
+  gap: var(--space-2);
+  flex-wrap: wrap;
 }
 
-.menu-item a {
-  text-decoration: none;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 10px 15px;
-  transition: color 0.3s;
-}
+.menu-item {
+  a {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-md);
+    color: var(--neutral-700);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    background: var(--neutral-50);
 
-.menu-item a:hover {
-  color: #ffdd57;
+    &:hover {
+      background: var(--primary-50);
+      color: var(--primary-700);
+      border-color: var(--primary-200);
+      text-decoration: none;
+    }
+
+    &.active {
+      background: var(--primary-100);
+      color: var(--primary-800);
+      border-color: var(--primary-300);
+    }
+  }
 }
 
 .menu-item-button {
-  background: #ff4d4d;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-weight: 500;
   cursor: pointer;
-  transition: background 0.3s;
-}
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
 
-.menu-item-button:hover {
-  background: #d63232;
-}
+  &.sign-in {
+    background: var(--primary-600);
+    color: white;
+    
+    &:hover {
+      background: var(--primary-700);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+  }
 
-.principal {
-  margin-top: 10px;
-  text-align: center;
-  font-size: 14px;
-  color: #333;
-  font-weight: bold;
+  &.sign-out {
+    background: var(--error-500);
+    color: white;
+    
+    &:hover {
+      background: var(--error-600);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+  }
 }

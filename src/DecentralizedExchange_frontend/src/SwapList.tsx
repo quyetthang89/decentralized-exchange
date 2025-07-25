@@ -43,32 +43,33 @@ function SwapList() {
 
   return (
     <div className="swap-list-container">
-      <h2 className="swap-list-title">Swap Requests</h2>
+      <h2 className="swap-list-title">Available Swap Requests</h2>
       {swapRequests.length === 0 ? (
-        <p className="no-swaps">No swap requests available.</p>
+        <p className="no-swaps">No swap requests available at the moment.</p>
       ) : (
         <ul className="swap-list">
           {swapRequests.map((request) => (
             <li key={request.id.toString()} className="swap-item">
               <div className="swap-details">
+                <div className="swap-route">
+                  <span className="token-badge">{request.fromToken}</span>
+                  <span className="swap-arrow">→</span>
+                  <span className="token-badge">{request.toToken}</span>
+                </div>
                 <p>
-                  <strong>From:</strong> {request.fromToken} →{" "}
-                  <strong>To:</strong> {request.toToken}
+                  <strong>Amount:</strong> 
+                  <span className="amount-display"> {formatAmount(request.amount)}</span>
                 </p>
-                <p>
-                  <strong>Amount:</strong> {formatAmount(request.amount)}
-                </p>
-                <p className="creator">
-                  <strong>Creator:</strong> {request.creator.toText()}
-                </p>
+                <div className="creator">
+                  Creator: {request.creator.toText()}
+                </div>
               </div>
               <button
                 className="swap-button"
                 onClick={() => onSwap(request.id)}
                 disabled={saving}
-                style={{ opacity: saving ? 0.5 : 1 }}
               >
-                Swap
+                {saving ? 'Processing...' : 'Accept Swap'}
               </button>
             </li>
           ))}

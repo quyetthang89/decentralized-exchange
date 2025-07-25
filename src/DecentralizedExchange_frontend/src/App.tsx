@@ -10,7 +10,7 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
-        <h1>SwapX</h1>
+        <h1>Decentralized Exchange</h1>
         <Navigation />
         <div className="content">
           <Routes>
