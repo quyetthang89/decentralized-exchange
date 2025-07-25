@@ -32,12 +32,13 @@ export const useAuthClient = () => {
 
     const internetIdentityUrl =
       process.env.DFX_NETWORK === "ic"
-        ? "https //identity.ic0.app/#authorize"
+        ? "https://identity.ic0.app/#authorize"
         : `http://${process.env.CANISTER_ID_INTERNET_IDENTITY}.localhost:4943`;
 
     await new Promise((resolve) => {
       authClient.login({
         identityProvider: internetIdentityUrl,
+        windowOpenerFeatures: "toolbar=0,location=0,menubar=0,width=500,height=500,left=100,top=100",
         onSuccess: () => resolve(undefined),
       });
     });

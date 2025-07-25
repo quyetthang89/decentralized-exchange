@@ -8,31 +8,36 @@ function Navigation() {
   const navigate = useNavigate();
 
   return (
-    <>
+    <nav className="navigation">
       {isAuthenticated && (
-        <div className="principal">Logged in as: {principal?.toString()}</div>
+        <div className="principal">
+          Logged in as: {principal?.toString()}
+        </div>
       )}
       <div className="menu">
         <div className="menu-item">
-          <Link to="/">List swaps</Link>
+          <Link to="/">Browse Swaps</Link>
         </div>
         {isAuthenticated && (
           <div className="menu-item">
-            <Link to="/newSwap">Create swap</Link>
+            <Link to="/newSwap">Create Swap</Link>
           </div>
         )}
         {isAuthenticated && (
           <div className="menu-item">
-            <Link to="/myAccount">My wallet</Link>
+            <Link to="/myAccount">My Wallet</Link>
           </div>
         )}
         {!isAuthenticated ? (
-          <div className="menu-item-button" onClick={login}>
-            Sign in
+          <div 
+            className="menu-item-button sign-in" 
+            onClick={login}
+          >
+            Sign In
           </div>
         ) : (
           <div
-            className="menu-item-button"
+            className="menu-item-button sign-out"
             onClick={() => {
               logout();
               navigate("/");
@@ -42,7 +47,7 @@ function Navigation() {
           </div>
         )}
       </div>
-    </>
+    </nav>
   );
 }
 
