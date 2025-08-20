@@ -2,21 +2,14 @@
 
 Decentralized Exchange (DEX-X) is a cutting-edge blockchain protocol facilitating seamless and trustless cross-chain asset swaps. It allows users to exchange tokens across different blockchain networks, enhancing interoperability and liquidity in the decentralized ecosystem.
 
-⚙️ Key Features
+## Key feature
+💼 Wallet & Contract Balance Management: Easily view your on-chain wallet balances, deposit or withdraw tokens, and track funds held in the contract for ongoing swaps.
 
-💼 Wallet & Contract Balance Management
+🛠️ Create Custom Swap Offers: Define your own swap terms — from token pairs to target chains — and publish them for others to match.
 
-Easily view your on-chain wallet balances, deposit or withdraw tokens, and track funds held in the contract for ongoing swaps.
+🧩 Simple UX, Powerful Logic: Despite working across complex multi-chain systems, DEX‑X keeps the user interface simple and intuitive — making decentralized swaps feel like using a regular wallet.
 
-🛠️ Create Custom Swap Offers
-
-Define your own swap terms — from token pairs to target chains — and publish them for others to match.Screen Shot 2025-07-25 at 15.21.49.png
-
-🧩 Simple UX, Powerful Logic
-
-Despite working across complex multi-chain systems, DEX‑X keeps the user interface simple and intuitive — making decentralized swaps feel like using a regular wallet.
-
-# `Get started`
+## Get started
 
 To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
 
